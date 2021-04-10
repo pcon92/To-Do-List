@@ -1,0 +1,345 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+/* Set variables for color scheme */
+:root {
+    --outerContainer: rgba(0, 0, 0, 0.4);
+    --inputBox: rgba(40, 40, 40, 1);
+    --btn: rgba(170, 170, 170, 0.7);
+    --btnHover: rgba(150, 150, 150, 0.7);
+    --middleSection: rgba(0, 0, 0, 0.8);
+    --newToDoBox: rgba(70, 70, 70, 0.6);
+    --footer: rgba(110, 110, 110, 0.1);
+}
+
+/* General format rules */
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.max-w-h {
+    width: 100%;
+    height: 100%;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    background-color: var(--btn);
+    color: white;
+    outline: none;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(https://images.pexels.com/photos/242236/pexels-photo-242236.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+    flex-direction: column;
+}
+
+h1 {
+    margin-bottom: 100px;
+    font-size: 100px;
+    font-family: 'Righteous', cursive;
+    font-weight: lighter;
+}
+
+#to-help-center-with-flex {
+    margin-top: 50px;
+    visibility: hidden;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+
+/* Main */
+
+.outer-container {
+    height: 600px;
+    width: 600px;
+    border: 5px groove white;
+    border-radius: 50%;
+    background-color: var(--outerContainer);
+    flex-direction: column;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.3);
+}
+
+#app-container {
+    height: 300px;
+    width: 300px;
+    border: 2px solid white; 
+    flex-direction: column;
+}
+
+#top-section {
+    flex: 1;
+    width: 100%;
+    display: flex;
+}
+
+#input-box-div {
+    flex: 4;
+}
+
+#input-box {
+    outline: none;
+    border: none;
+    padding: 10px 10px 10px 15px;
+    background-color: var(--inputBox);
+    color: white;
+    font-size: 18px;
+}
+
+#add-btn-div {
+    flex: 1;
+}
+
+.btn:hover {
+    color: red;
+    font-size: 16px;
+    background-color: var(--btnHover);
+}
+
+#middle-section {
+    background-color: var(--middleSection);
+    flex: 4;
+    width: 100%;
+}
+
+#bottom-section {
+    flex: 1;
+    width: 100%;
+    display: flex;
+}
+
+#clear-all-btn-div {
+    flex: 1;
+}
+
+.new-to-do-item {
+    width: 80%;
+    padding: 10px 10px 10px 15px;
+    color: white;
+    font-size: 14px;
+}
+
+.new-to-do-box {
+    height: 20%;
+    display: flex;
+    background-color: var(--newToDoBox);
+    align-items: center;
+    border: 1px solid black;
+}
+
+.red-box {
+    border-left: 5px solid red;
+}
+
+.blue-box {
+    border-left: 5px solid blue;
+}
+
+.yellow-box {
+    border-left: 5px solid yellow;
+}
+
+.new-to-do-btn {
+    width: 10%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 20px 10px 10px;
+}
+
+.red-btn {
+    color: red;
+}
+
+.blue-btn {
+    color: blue;
+}
+
+.yellow-btn {
+    color: yellow;
+}
+
+
+/* Customize Preferences Panel and Setup */
+
+#show-customize-div {
+    margin-top: 50px;
+    color: white;
+    font-weight: lighter;
+}
+
+#show-customization-checkbox {
+    margin: 5px;
+}
+
+.customization-panel {
+    height: 100px;
+    width: 600px;
+    border: 3px solid black;
+    border-radius: 15px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#animation-selection-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    flex: 1;
+}
+
+#color-selection-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    flex: 1;
+}
+
+#item-delete-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    padding: 5px;
+}
+
+#color-for-important-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    padding: 5px;
+}
+
+.radio-option {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.radio-label {
+    padding-left: 10px;
+}
+
+
+/* Animations */
+
+.anim-spin {
+    animation: spin-container;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
+}
+
+    @keyframes spin-container {
+        100% {transform: rotate(360deg)}
+    }
+
+.anim-dropdown {
+    animation: item-drop-down;
+    animation-duration: 0.4s;
+}
+
+    @keyframes item-drop-down {
+        0% {transform: translateY(-30px); opacity: 0}
+        50% {opacity: 0.3}
+        80% {opacity: 0.3}
+        100% {transform: translateY(0px); opacity: 1}
+    }
+
+.anim-appear {
+    animation: appear;
+    animation-duration: 3s;
+}
+
+    @keyframes appear {
+        0% {opacity: 0}
+        100% {opacity: 1}
+    }
+
+.anim-shake {
+    animation: shake;
+    animation-duration: 0.5s;
+}
+
+    @keyframes shake {
+        0% {transform: translateX(-4px)}
+        25% {transform: translateX(4px)}
+        50% {transform: translateX(-4px)}
+        75% {transform: translateX(4px)}
+        100% {transform: translateX(0px)}
+    }
+
+.anim-dropoff {
+    animation: item-drop-off;
+    animation-duration: 2s;
+}
+
+    @keyframes item-drop-off {
+        0% {transform-origin: top left; transform: rotate(0deg)}
+        25% {transform-origin: top left; transform: rotate(60deg)}
+        55% {transform-origin: top left; transform: rotate(58deg)}
+        75% {transform-origin: top left; transform: rotate(60deg)}
+        90% {transform-origin: top left; transform: rotate(59deg); opacity: 1}
+        100% {transform-origin: top left; transform: rotate(75deg) translate(250px,30px); opacity: 0}
+    }
+
+.anim-disappear {
+    animation: item-disappear;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+    @keyframes item-disappear {
+        100% {opacity: 0; visibility: hidden}
+    }
+
+
+/* Footer */
+
+footer {
+    font-size: 10px;
+    color: black;
+    background-color: var(--footer);
+    position: fixed;
+    bottom: 0px;
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+
+/* 
+
+White painted textured wall background image (NB: free to use with no attribution required)
+https://www.pexels.com/photo/white-painted-textured-wall-242236/ 
+https://images.pexels.com/photos/242236/pexels-photo-242236.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260
+
+*/
+
